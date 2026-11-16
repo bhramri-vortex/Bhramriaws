@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nova Creative</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #f5f7fb;
+        }
+
+        nav {
+            background-color: #172554;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+
+        .home {
+            text-align: center;
+            padding: 70px 20px;
+            background-color: #e0e7ff;
+        }
+
+        .home h1 {
+            font-size: 40px;
+            color: #172554;
+        }
+
+        .home p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        button {
+            background-color: #4338ca;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #172554;
+        }
+
+        .section {
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        .services {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            width: 220px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #ddd;
+        }
+
+        .card h3 {
+            color: #4338ca;
+        }
+
+        input, textarea {
+            width: 80%;
+            padding: 12px;
+            margin: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #172554;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media(max-width: 600px) {
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .home h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>NOVA CREATIVE</h2>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="home" id="home">
+        <h1>Welcome to Nova Creative</h1>
+
+        <p>We create smart ideas for a better digital world.</p>
+
+        <button onclick="welcome()">
+            Explore More
+        </button>
+
+        <p id="demo"></p>
+    </div>
+
+    <div class="section" id="about">
+        <h2>About Us</h2>
+
+        <p>
+            Nova Creative is a digital agency
+            focused on creativity, technology
+            and innovative solutions.
+        </p>
+    </div>
+
+    <div class="section" id="services">
+        <h2>Our Services</h2>
+
+        <div class="services">
+
+            <div class="card">
+                <h3>Web Design</h3>
+                <p>Beautiful and modern website designs.</p>
+            </div>
+
+            <div class="card">
+                <h3>Development</h3>
+                <p>Simple and powerful digital solutions.</p>
+            </div>
+
+            <div class="card">
+                <h3>Graphic Design</h3>
+                <p>Creative graphics for your business.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section" id="contact">
+        <h2>Contact Us</h2>
+
+        <form onsubmit="sendMessage(event)">
+            <input type="text" placeholder="Your Name" required>
+            <br>
+
+            <input type="email" placeholder="Your Email" required>
+            <br>
+
+            <textarea placeholder="Your Message" required></textarea>
+            <br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="result"></p>
+    </div>
+
+    <footer>
+        <p>© 2026 Nova Creative | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function welcome() {
+            document.getElementById("demo").innerHTML =
+            "Thank you for exploring Nova Creative!";
+        }
+
+        function sendMessage(event) {
+            event.preventDefault();
+
+            document.getElementById("result").innerHTML =
+            "Thank you! Your message has been received.";
+
+            event.target.reset();
+        }
+    </script>
+
+</body>
+</html>
